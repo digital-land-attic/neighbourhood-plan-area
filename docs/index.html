@@ -116,18 +116,28 @@
     </form>
     <div class="js-no-filter-list-matches"><p class="govuk-body">No matches.</p></div> <!-- needs to go outside of index-list-wrapper -->
 
-    <div class="index-list-wrapper">
+
+        <div class="index-list-wrapper">
             <div class="count-wrapper">
                 <p class="govuk-body" aria-hidden="true">Showing <span class="js-list-count">40</span> records.</p>
                 <p class="govuk-visually-hidden">There are
                     <span class="js-accessible-list-count">40</span>
                     records listed.
                 </p>
+            </div>        <form action="" class="govuk-form govuk-!-margin-bottom-4 dl-historical-toggle-form js-hidden" data-historical="form">
+            <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="hsitorical" name="hsitorical" type="checkbox" value="show">
+                    <label class="govuk-label govuk-checkboxes__label" for="hsitorical">
+                    Show historical records
+                    </label>
+                </div>
             </div>
-
-            <table class="dl-index-list" data-filter="list">
+        </form>
+<table class="dl-index-list"
+ data-filter="list" data-historical='list'>
   <tbody>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./beaconsfield" data-filter="match-content">neighbourhood-plan-area:beaconsfield</a>
@@ -137,7 +147,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Beaconsfield</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./bledlow-cum-saunderton" data-filter="match-content">neighbourhood-plan-area:bledlow-cum-saunderton</a>
@@ -147,7 +157,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Bledlow-cum-Saunderton</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./buckingham" data-filter="match-content">neighbourhood-plan-area:buckingham</a>
@@ -157,7 +167,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Buckingham</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./buckland" data-filter="match-content">neighbourhood-plan-area:buckland</a>
@@ -167,7 +177,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Buckland</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./burnham" data-filter="match-content">neighbourhood-plan-area:burnham</a>
@@ -177,7 +187,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Burnham</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./chalfont-st-giles" data-filter="match-content">neighbourhood-plan-area:chalfont-st-giles</a>
@@ -187,7 +197,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Chalfont St Giles</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./chalfont-st-peter" data-filter="match-content">neighbourhood-plan-area:chalfont-st-peter</a>
@@ -197,7 +207,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Chalfont St Peter</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./cheddington" data-filter="match-content">neighbourhood-plan-area:cheddington</a>
@@ -207,7 +217,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Cheddington</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./chesham" data-filter="match-content">neighbourhood-plan-area:chesham</a>
@@ -217,7 +227,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Chesham</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./daws-hill" data-filter="match-content">neighbourhood-plan-area:daws-hill</a>
@@ -227,7 +237,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Daws Hill</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./denham-parish" data-filter="match-content">neighbourhood-plan-area:denham-parish</a>
@@ -237,7 +247,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Denham Parish</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./edlesborough" data-filter="match-content">neighbourhood-plan-area:edlesborough</a>
@@ -247,7 +257,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Edlesborough</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./farnham-royal" data-filter="match-content">neighbourhood-plan-area:farnham-royal</a>
@@ -257,7 +267,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Farnham Royal</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./fulmer" data-filter="match-content">neighbourhood-plan-area:fulmer</a>
@@ -267,7 +277,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Fulmer</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./gerrards-cross" data-filter="match-content">neighbourhood-plan-area:gerrards-cross</a>
@@ -277,7 +287,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Gerrards Cross</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./great-and-little-kimble-cum-marsh" data-filter="match-content">neighbourhood-plan-area:great-and-little-kimble-cum-marsh</a>
@@ -287,7 +297,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Great and Little Kimble-cum-Marsh</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./great-horwood" data-filter="match-content">neighbourhood-plan-area:great-horwood</a>
@@ -297,7 +307,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Great Horwood</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./haddenham" data-filter="match-content">neighbourhood-plan-area:haddenham</a>
@@ -307,7 +317,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Haddenham</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./hedgerley" data-filter="match-content">neighbourhood-plan-area:hedgerley</a>
@@ -317,7 +327,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Hedgerley</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./ickford" data-filter="match-content">neighbourhood-plan-area:ickford</a>
@@ -327,7 +337,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Ickford</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./iver" data-filter="match-content">neighbourhood-plan-area:iver</a>
@@ -337,7 +347,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Iver</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./ivinghoe" data-filter="match-content">neighbourhood-plan-area:ivinghoe</a>
@@ -347,7 +357,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Ivinghoe</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./long-crendon" data-filter="match-content">neighbourhood-plan-area:long-crendon</a>
@@ -357,7 +367,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Long Crendon</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./longwick-cum-ilmer" data-filter="match-content">neighbourhood-plan-area:longwick-cum-ilmer</a>
@@ -367,7 +377,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Longwick-cum-Ilmer</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./marsh-gibbon" data-filter="match-content">neighbourhood-plan-area:marsh-gibbon</a>
@@ -377,7 +387,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Marsh Gibbon</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./pitstone" data-filter="match-content">neighbourhood-plan-area:pitstone</a>
@@ -387,7 +397,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Pitstone</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./quainton" data-filter="match-content">neighbourhood-plan-area:quainton</a>
@@ -397,7 +407,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Quainton</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./seer-green" data-filter="match-content">neighbourhood-plan-area:seer-green</a>
@@ -407,7 +417,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Seer Green</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./slapton" data-filter="match-content">neighbourhood-plan-area:slapton</a>
@@ -417,7 +427,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Slapton</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./steeple-claydon" data-filter="match-content">neighbourhood-plan-area:steeple-claydon</a>
@@ -427,7 +437,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Steeple Claydon</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./stoke-poges" data-filter="match-content">neighbourhood-plan-area:stoke-poges</a>
@@ -437,7 +447,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Stoke Poges</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./taplow" data-filter="match-content">neighbourhood-plan-area:taplow</a>
@@ -447,7 +457,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Taplow</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./waddesdon" data-filter="match-content">neighbourhood-plan-area:waddesdon</a>
@@ -457,7 +467,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Waddesdon</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./wendover" data-filter="match-content">neighbourhood-plan-area:wendover</a>
@@ -467,7 +477,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Wendover</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./weston-turville" data-filter="match-content">neighbourhood-plan-area:weston-turville</a>
@@ -477,7 +487,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Weston Turville</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./wing" data-filter="match-content">neighbourhood-plan-area:wing</a>
@@ -487,7 +497,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Wing</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./wingrave-with-rowsham" data-filter="match-content">neighbourhood-plan-area:wingrave-with-rowsham</a>
@@ -497,7 +507,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Wingrave with Rowsham</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./winslow" data-filter="match-content">neighbourhood-plan-area:winslow</a>
@@ -507,7 +517,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Winslow</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./wooburn-and-bourne-end" data-filter="match-content">neighbourhood-plan-area:wooburn-and-bourne-end</a>
@@ -517,7 +527,7 @@
     <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Wooburn and Bourne End</p>
   </td>
 </tr>
-<tr class=""  data-filter="item">
+<tr class=""  data-filter="item" data-historical-item="false">
   <td>
     <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0">
       <a class="govuk-link" href="./worminghall" data-filter="match-content">neighbourhood-plan-area:worminghall</a>
@@ -529,8 +539,8 @@
 </tr></tbody>
 </table>
 
+        </div>
 
-    </div>
 
         </main>
       </div>
@@ -619,6 +629,15 @@
             list_section_selector: '.index-list-wrapper',
             count_wrapper_selector: '.count-wrapper'
         })
+        </script>
+        <script>
+            const showCounts = true
+            const $hist = document.querySelector('[data-historical="form"]');
+            new window.DLFrontend.FilterHistorical($hist).init({
+                triggerEvents: "list:filtered",
+                listWrapperSelector: '.index-list-wrapper',
+                showCountsWhenShowingAll: showCounts
+            })
         </script>
 
   </body>
