@@ -139,7 +139,12 @@ crossorigin="" />
                 <a class="dlf-subnav__list-item__link" href="#history" data-module-sub-nav="tab">
                 History
                 </a>
-            </li></ul>
+            </li><li class="dlf-subnav__list-item">
+                <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
+                Referenced by (0)
+                </a>
+            </li>
+        </ul>
     </nav>
 
 <div id="record">
@@ -175,11 +180,6 @@ crossorigin="" />
             
 </div>
 
-<h3 class="govuk-heading-m">Associated information</h3>
-
-<ul class="govuk-list govuk-list--bullet">
-    <li><a href="https://digital-land.github.io/specification/schema/organisation/">View the organisation schema</a></li></ul>
-
 
     <h2 class="govuk-heading-m">Geographical area</h2>
 
@@ -194,9 +194,15 @@ crossorigin="" />
 </div>
 
 
-    <div class="govuk-!-margin-top-2">
+    <div class="govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <a class="dl-page-action-button" href="https://digital-land.github.io/parish/E04001553/geometry.geojson">Download geojson</a>
-    </div></div>
+    </div>
+<h3 class="govuk-heading-m">Associated information</h3>
+
+<ul class="govuk-list govuk-list--bullet">
+    <li><a href="https://digital-land.github.io/specification/schema/organisation/">View the organisation schema</a></li></ul>
+
+</div>
 
 <div id="history"><h2 class="govuk-heading-m dlf-subnav__heading">History</h2>
 <div class="data-table__wrapper" data-module="data-table">
@@ -208,27 +214,35 @@ crossorigin="" />
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
+            <th>official-name</th>
             <th>statistical-geography</th>
             <th>organisation</th>
             <th>name</th>
-            <th>official-name</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2021-02-01</td>
             <td><a href="https://github.com/digital-land/neighbourhood-plan-area-collection/tree/main/transformed/neighbourhood-plan-area/b963fb91d684df24a6c0f316370ef878a6fb4489765e2cda872e569b02f1e1ac.csv#L12">b963fb91d684...</a></td>
             <td>11</td>
+                <td>Wing Neighbourhood Plan</td> 
                 <td>E04001553</td> 
                 <td>neighbourhood-plan-area:wing</td> 
                 <td>Wing</td> 
-                <td>Wing Neighbourhood Plan</td> 
         </tr>    </tbody>
 </table>
 
     </div>
     <div class="data-table-right-shadow visible with-transition"></div>
 </div>
-</div>        </main>
+</div><div id="referenced-by">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m dlf-subnav__heading">Referenced by</h2>
+            <p class="govuk-body">This record is referenced by 0 other planning related data records.</p>
+</div>
+    </div>
+</div>
+        </main>
       </div>
 
     <div class="dlf-feedback__wrapper">
