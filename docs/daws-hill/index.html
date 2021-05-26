@@ -124,7 +124,7 @@
                 </a>
             </li><li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
-                Referenced by (0)
+                0 References
                 </a>
             </li>
         </ul>
@@ -134,13 +134,13 @@
 <div class="govuk-grid-row">    <div class="govuk-grid-column-two-thirds"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/neighbourhood-plan-area/daws-hill</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">name
-            </dt>
-            <dd class="govuk-summary-list__value">                Daws Hill            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">official-name
             </dt>
             <dd class="govuk-summary-list__value">                Daws Hill neighbourhood plan            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">name
+            </dt>
+            <dd class="govuk-summary-list__value">                Daws Hill            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -292,8 +292,24 @@
 	</script>
 
 <script>
+    const datasetName = "neighbourhood-plan-area"
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
-    const mapComponent = new DLMaps.Map($mapElement).init({})
+    const $nationalMapLink = document.querySelector('.dl-link-national-map')
+    const mapComponent = new DLMaps.Map($mapElement).init({
+        initGeoJsonLoadCallback: function (urls, featureGroup) {
+            console.log("initial load completed")
+            // do we need to check there isn't more than one shape?
+            const center = featureGroup.getBounds().getCenter()
+            const zoom = mapComponent.map.getZoom()
+            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            console.log(url)
+            if ($nationalMapLink) {
+                // only show this for the datasets we've added to the national map
+                $nationalMapLink.href = url
+                $nationalMapLink.classList.remove("js-hidden")
+            }
+        }
+    })
 </script>
 <script>
     // Initialise back to top

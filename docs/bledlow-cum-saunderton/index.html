@@ -141,7 +141,7 @@ crossorigin="" />
                 </a>
             </li><li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
-                Referenced by (0)
+                0 References
                 </a>
             </li>
         </ul>
@@ -151,13 +151,15 @@ crossorigin="" />
 <div class="govuk-grid-row">    <div class="govuk-grid-column-two-thirds"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/neighbourhood-plan-area/bledlow-cum-saunderton</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">name
-            </dt>
-            <dd class="govuk-summary-list__value">                Bledlow-cum-Saunderton            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">official-name
             </dt>
             <dd class="govuk-summary-list__value">                Bledlow-cum-Saunderton neighbourhood plan            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">statistical-geography
+            </dt>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001592" class="govuk-link">Bledlow-cum-Saunderton</a>
+<span title="Geography identifier: E04001592" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001592)</span>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -165,11 +167,9 @@ crossorigin="" />
 <span title="Organisation identifier: neighbourhood-plan-area:bledlow-cum-saunderton" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>neighbourhood-plan-area:bledlow-cum-saunderton)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">statistical-geography
+            <dt class="govuk-summary-list__key">name
             </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001592" class="govuk-link">Bledlow-cum-Saunderton</a>
-<span title="Geography identifier: E04001592" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001592)</span>
-            </dd>
+            <dd class="govuk-summary-list__value">                Bledlow-cum-Saunderton            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -180,19 +180,17 @@ crossorigin="" />
             
 </div>
 
-
     <h2 class="govuk-heading-m">Geographical area</h2>
 
     <div class="dl-map__wrapper"><div 
-        class="dl-map govuk-!-margin-top-4 govuk-!-margin-bottom-2"
-        id="dlMap"
-        data-module="boundary-map"
-        style="height: 460px;" data-geojson-urls="https://digital-land.github.io/parish/E04001592/geometry.geojson"   
-    >
-        <noscript>To view this map, you need to enable JavaScript.</noscript>
-    </div>
+    class="dl-map govuk-!-margin-top-4"
+    id="dlMap"
+    data-module="boundary-map"
+    style="height: 460px;" data-geojson-urls="https://digital-land.github.io/parish/E04001592/geometry.geojson"   
+>
+    <noscript>To view this map, you need to enable JavaScript.</noscript>
 </div>
-
+    </div>
 
     <div class="govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <a class="dl-page-action-button" href="https://digital-land.github.io/parish/E04001592/geometry.geojson">Download geojson</a>
@@ -214,20 +212,20 @@ crossorigin="" />
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>statistical-geography</th>
             <th>official-name</th>
             <th>organisation</th>
             <th>name</th>
+            <th>statistical-geography</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2021-02-01</td>
             <td><a href="https://github.com/digital-land/neighbourhood-plan-area-collection/tree/main/transformed/neighbourhood-plan-area/b963fb91d684df24a6c0f316370ef878a6fb4489765e2cda872e569b02f1e1ac.csv#L37">b963fb91d684...</a></td>
             <td>36</td>
-                <td>E04001592</td> 
                 <td>Bledlow-cum-Saunderton neighbourhood plan</td> 
                 <td>neighbourhood-plan-area:bledlow-cum-saunderton</td> 
                 <td>Bledlow-cum-Saunderton</td> 
+                <td>E04001592</td> 
         </tr>    </tbody>
 </table>
 
@@ -333,8 +331,24 @@ crossorigin="" />
 	</script>
 
 <script>
+    const datasetName = "neighbourhood-plan-area"
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
-    const mapComponent = new DLMaps.Map($mapElement).init({})
+    const $nationalMapLink = document.querySelector('.dl-link-national-map')
+    const mapComponent = new DLMaps.Map($mapElement).init({
+        initGeoJsonLoadCallback: function (urls, featureGroup) {
+            console.log("initial load completed")
+            // do we need to check there isn't more than one shape?
+            const center = featureGroup.getBounds().getCenter()
+            const zoom = mapComponent.map.getZoom()
+            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            console.log(url)
+            if ($nationalMapLink) {
+                // only show this for the datasets we've added to the national map
+                $nationalMapLink.href = url
+                $nationalMapLink.classList.remove("js-hidden")
+            }
+        }
+    })
 </script>
 <script>
     // Initialise back to top
