@@ -157,15 +157,15 @@ crossorigin="" />
 <span title="Geography identifier: E04001565" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001565)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">official-name
-            </dt>
-            <dd class="govuk-summary-list__value">                Chalfont St Giles            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/neighbourhood-plan-area/chalfont-st-giles" class="govuk-link">Chalfont St Giles</a>
 <span title="Organisation identifier: neighbourhood-plan-area:chalfont-st-giles" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>neighbourhood-plan-area:chalfont-st-giles)</span>
             </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">official-name
+            </dt>
+            <dd class="govuk-summary-list__value">                Chalfont St Giles            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">name
             </dt>
@@ -212,8 +212,8 @@ crossorigin="" />
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>official-name</th>
             <th>name</th>
+            <th>official-name</th>
             <th>organisation</th>
             <th>statistical-geography</th>
         </tr>
@@ -340,7 +340,7 @@ crossorigin="" />
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()
             const zoom = mapComponent.map.getZoom()
-            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            let url = `http://digital-land.github.io/map?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
             console.log(url)
             if ($nationalMapLink) {
                 // only show this for the datasets we've added to the national map

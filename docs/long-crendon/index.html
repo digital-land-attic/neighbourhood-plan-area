@@ -213,8 +213,8 @@ crossorigin="" />
             <th>resource</th>
             <th>line</th>
             <th>official-name</th>
-            <th>name</th>
             <th>organisation</th>
+            <th>name</th>
             <th>statistical-geography</th>
         </tr>
     </thead>
@@ -223,8 +223,8 @@ crossorigin="" />
             <td><a href="https://github.com/digital-land/neighbourhood-plan-area-collection/tree/main/transformed/neighbourhood-plan-area/b963fb91d684df24a6c0f316370ef878a6fb4489765e2cda872e569b02f1e1ac.csv#L6">b963fb91d684...</a></td>
             <td>5</td>
                 <td>Long Crendon Neighbourhood Plan</td> 
-                <td>Long Crendon</td> 
                 <td>neighbourhood-plan-area:long-crendon</td> 
+                <td>Long Crendon</td> 
                 <td>E04001505</td> 
         </tr>    </tbody>
 </table>
@@ -340,7 +340,7 @@ crossorigin="" />
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()
             const zoom = mapComponent.map.getZoom()
-            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            let url = `http://digital-land.github.io/map?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
             console.log(url)
             if ($nationalMapLink) {
                 // only show this for the datasets we've added to the national map
