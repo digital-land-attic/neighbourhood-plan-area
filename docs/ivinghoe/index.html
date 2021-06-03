@@ -159,16 +159,16 @@ crossorigin="" />
             </dt>
             <dd class="govuk-summary-list__value">                Ivinghoe            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">organisation
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/neighbourhood-plan-area/ivinghoe" class="govuk-link">Ivinghoe</a>
-<span title="Organisation identifier: neighbourhood-plan-area:ivinghoe" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>neighbourhood-plan-area:ivinghoe)</span>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">statistical-geography
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001498" class="govuk-link">Ivinghoe</a>
 <span title="Geography identifier: E04001498" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001498)</span>
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">organisation
+            </dt>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/neighbourhood-plan-area/ivinghoe" class="govuk-link">Ivinghoe</a>
+<span title="Organisation identifier: neighbourhood-plan-area:ivinghoe" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>neighbourhood-plan-area:ivinghoe)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
@@ -214,8 +214,8 @@ crossorigin="" />
             <th>line</th>
             <th>official-name</th>
             <th>organisation</th>
-            <th>name</th>
             <th>statistical-geography</th>
+            <th>name</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -224,8 +224,8 @@ crossorigin="" />
             <td>13</td>
                 <td>Ivinghoe Neighbourhood Plan</td> 
                 <td>neighbourhood-plan-area:ivinghoe</td> 
-                <td>Ivinghoe</td> 
                 <td>E04001498</td> 
+                <td>Ivinghoe</td> 
         </tr>    </tbody>
 </table>
 
@@ -335,7 +335,7 @@ crossorigin="" />
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

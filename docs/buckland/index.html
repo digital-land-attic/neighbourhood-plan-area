@@ -155,15 +155,15 @@ crossorigin="" />
             </dt>
             <dd class="govuk-summary-list__value">                Buckland Neighbourhood Plan            </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">name
+            </dt>
+            <dd class="govuk-summary-list__value">                Buckland            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">statistical-geography
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001466" class="govuk-link">Buckland</a>
 <span title="Geography identifier: E04001466" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001466)</span>
             </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">name
-            </dt>
-            <dd class="govuk-summary-list__value">                Buckland            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -214,8 +214,8 @@ crossorigin="" />
             <th>line</th>
             <th>official-name</th>
             <th>organisation</th>
-            <th>name</th>
             <th>statistical-geography</th>
+            <th>name</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -224,8 +224,8 @@ crossorigin="" />
             <td>15</td>
                 <td>Buckland Neighbourhood Plan</td> 
                 <td>neighbourhood-plan-area:buckland</td> 
-                <td>Buckland</td> 
                 <td>E04001466</td> 
+                <td>Buckland</td> 
         </tr>    </tbody>
 </table>
 
@@ -335,7 +335,7 @@ crossorigin="" />
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

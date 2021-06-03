@@ -151,10 +151,6 @@ crossorigin="" />
 <div class="govuk-grid-row">    <div class="govuk-grid-column-two-thirds"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/neighbourhood-plan-area/waddesdon</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">name
-            </dt>
-            <dd class="govuk-summary-list__value">                Waddesdon            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">official-name
             </dt>
             <dd class="govuk-summary-list__value">                Waddesdon Neighbourhood Plan            </dd>
@@ -164,6 +160,10 @@ crossorigin="" />
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001544" class="govuk-link">Waddesdon</a>
 <span title="Geography identifier: E04001544" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001544)</span>
             </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">name
+            </dt>
+            <dd class="govuk-summary-list__value">                Waddesdon            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisation
             </dt>
@@ -214,8 +214,8 @@ crossorigin="" />
             <th>line</th>
             <th>official-name</th>
             <th>organisation</th>
-            <th>name</th>
             <th>statistical-geography</th>
+            <th>name</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -224,8 +224,8 @@ crossorigin="" />
             <td>20</td>
                 <td>Waddesdon Neighbourhood Plan</td> 
                 <td>neighbourhood-plan-area:waddesdon</td> 
-                <td>Waddesdon</td> 
                 <td>E04001544</td> 
+                <td>Waddesdon</td> 
         </tr>    </tbody>
 </table>
 
@@ -335,7 +335,7 @@ crossorigin="" />
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()
