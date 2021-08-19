@@ -162,15 +162,15 @@ crossorigin="" />
 <span title="Organisation identifier: neighbourhood-plan-area:gerrards-cross" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>neighbourhood-plan-area:gerrards-cross)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Official name
+            </dt>
+            <dd class="govuk-summary-list__value">                Gerrards Cross Neighbourhood Area;            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Statistical geography
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001586" class="govuk-link">Gerrards Cross</a>
 <span title="Geography identifier: E04001586" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001586)</span>
             </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Official name
-            </dt>
-            <dd class="govuk-summary-list__value">                Gerrards Cross Neighbourhood Area;            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Entry date
             </dt>
@@ -187,7 +187,7 @@ crossorigin="" />
     class="dl-map govuk-!-margin-top-4"
     id="dlMap"
     data-module="boundary-map"
-    style="height: 460px;" data-geojson-urls="https://digital-land.github.io/parish/E04001586/geometry.geojson"   
+    style="height: 460px;"   
 >
     <noscript>To view this map, you need to enable JavaScript.</noscript>
 </div>
@@ -216,8 +216,8 @@ crossorigin="" />
             <th>line</th>
             <th>organisation</th>
             <th>statistical-geography</th>
-            <th>name</th>
             <th>official-name</th>
+            <th>name</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -226,8 +226,8 @@ crossorigin="" />
             <td>27</td>
                 <td>neighbourhood-plan-area:gerrards-cross</td> 
                 <td>E04001586</td> 
-                <td>Gerrards Cross</td> 
                 <td>Gerrards Cross Neighbourhood Area;</td> 
+                <td>Gerrards Cross</td> 
         </tr>    </tbody>
 </table>
 
@@ -336,21 +336,25 @@ crossorigin="" />
     const datasetName = "neighbourhood-plan-area"
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
-    const mapComponent = new DLMaps.Map($mapElement).init({
-        initZoomCallback: function (featureGroup) {
-            console.log("initial load completed")
-            // do we need to check there isn't more than one shape?
-            const center = featureGroup.getBounds().getCenter()
-            const zoom = mapComponent.map.getZoom()
-            let url = `http://digital-land.github.io/map?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
-            console.log(url)
-            if ($nationalMapLink) {
-                // only show this for the datasets we've added to the national map
-                $nationalMapLink.href = url
-                $nationalMapLink.classList.remove("js-hidden")
-            }
-        }
-    })
+    const mapParams = {
+    initZoomCallback: function (featureGroup, map) {
+          console.log("initial load completed")
+          // do we need to check there isn't more than one shape?
+          const center = featureGroup.getBounds().getCenter()
+          const zoom = map.getZoom()
+          let url = `http://digital-land.github.io/map?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+          console.log(url)
+          if ($nationalMapLink) {
+              // only show this for the datasets we've added to the national map
+              $nationalMapLink.href = url
+              $nationalMapLink.classList.remove("js-hidden")
+          }
+      }
+    }
+
+    mapParams.geojsonURLs = ["https://digital-land.github.io/parish/E04001586/geometry.geojson"]
+
+    const mapComponent = new DLMaps.Map($mapElement).init(mapParams)
 </script>
 <script>
     // Initialise back to top
